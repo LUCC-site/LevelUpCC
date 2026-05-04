@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Level Up College Counseling | Elite Admissions Consulting</title>
+    <meta name="description" content="Boutique college counseling with unlimited hours. Proven placements at Stanford, CMU, and all Ivy League schools. Limited cohort. Extraordinary results." />
+    <link rel="canonical" href="https://levelupcollegecounseling.com" />
+    <meta name="author" content="Level Up College Counseling" />
+
+    <link rel="icon" type="image/png" href="/icon.png" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <meta property="og:title" content="Level Up College Counseling" />
+    <meta property="og:description" content="Extraordinary results. Limited cohort. Elite admissions consulting." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://levelupcollegecounseling.com" />
+    <meta property="og:image" content="/icon.png" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="1024" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Level Up College Counseling" />
+    <meta name="twitter:url" content="https://levelupcollegecounseling.com" />
+    <meta name="twitter:image" content="/icon.png" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <form name="IntakeForm" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input name="bot-field" />
+      <input type="hidden" name="subject" /> 
+      <input type="text" name="role" />
+      <input type="text" name="gradYear" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <textarea name="message"></textarea>
+    </form>
+    
+    <form name="EssayHelpRequest" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input name="bot-field" />
+      <input type="hidden" name="subject" /> 
+      <input type="text" name="full-name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <textarea name="looking-for"></textarea>
+    </form>
+
+    <form name="EssayHelp" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input name="bot-field" />
+      <input type="hidden" name="subject" /> 
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="target-schools" />
+      <select name="draft-status">
+        <option value="not-started"></option>
+        <option value="brainstorming"></option>
+        <option value="rough-draft"></option>
+        <option value="polishing"></option>
+      </select>
+      <textarea name="message"></textarea>
+    </form>
+
+    <form name="OneTime" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input name="bot-field" />
+      <input type="hidden" name="subject" /> 
+      <input type="text" name="name" />
+      <input type="text" name="grade" />
+      <input type="email" name="email" />
+      <select name="primary-goal">
+        <option value="college-list"></option>
+        <option value="extracurriculars"></option>
+        <option value="major-selection"></option>
+        <option value="general-checkup"></option>
+        <option value="other"></option>
+      </select>
+      <textarea name="questions"></textarea>
+    </form>
+
+    <form name="InterviewPrep" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input name="bot-field" />
+      <input type="hidden" name="subject" /> 
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="date" name="interview-date" />
+      <input type="text" name="next-interview-with-who" />
+      <textarea name="details"></textarea>
+    </form>
+
+    <form name="ShareYourJourney" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input name="bot-field" />
+      <input type="hidden" name="form-name" value="ShareYourJourney" />
+      <input type="hidden" name="subject" /> 
+      <input type="text" name="identity" /> 
+      <input type="text" name="full-name" />
+      <input type="text" name="university-accepted" />
+      <textarea name="story-details"></textarea>
+    </form>
+    
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/student-portal";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

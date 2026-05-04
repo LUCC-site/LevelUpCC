@@ -1,0 +1,16 @@
+{
+  "name": "Level Up College Counseling",
+  "short_name": "LUCC",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#002147",
+  "theme_color": "#002147",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
