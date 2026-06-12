@@ -14,9 +14,9 @@ const services = [
 ];
 
 const contactOptions = [
-  { label: 'Email', href: 'mailto:levelupaxn@gmail.com', desc: 'Drop us a line anytime' },
-  { label: 'Phone', href: 'tel:+15105561343', desc: 'Call our support team' },
-  { label: 'WhatsApp', href: 'https://wa.me/15105561343', desc: 'Chat instantly with us' },
+  { label: 'Email', href: 'mailto:levelupaxn@gmail.com', desc: 'Drop us a line at levelupaxn@gmail.com' },
+  { label: 'Phone', href: 'tel:+15105561343', desc: 'Call (510) 556-1343' },
+  { label: 'WhatsApp', href: 'https://wa.me/15105561343', desc: 'Chat via WhatsApp' },
 ];
 
 export default function Navbar() {
