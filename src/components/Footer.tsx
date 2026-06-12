@@ -1,4 +1,3 @@
-JavaScript
 import { Link } from 'react-router-dom';
 // Import the bird logo
 import birdLogo from "@/assets/levelup-logo-bird.png";
