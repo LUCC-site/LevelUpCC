@@ -1,3 +1,4 @@
+JavaScript
 import { Link } from 'react-router-dom';
 // Import the bird logo
 import birdLogo from "@/assets/levelup-logo-bird.png";
@@ -61,6 +62,14 @@ export default function Footer() {
                   Daily 9am – 10pm PST
                 </p>
               </div>
+              <a 
+                href="https://wa.me/15105561343" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="block font-body text-sm text-background/60 hover:text-gold transition-colors duration-300"
+              >
+                Chat on WhatsApp
+              </a>
             </div>
           </div>
         </div>
