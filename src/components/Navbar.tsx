@@ -1,3 +1,4 @@
+JavaScript
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -13,10 +14,17 @@ const services = [
   { label: 'Interview Prep', href: '/services/interview', desc: 'Mock sessions & confidence building' },
 ];
 
+const contactOptions = [
+  { label: 'Email', href: 'mailto:levelupaxn@gmail.com', desc: 'Drop us a line anytime' },
+  { label: 'Phone', href: 'tel:+15105561343', desc: 'Call our support team' },
+  { label: 'WhatsApp', href: 'https://wa.me/15105561343', desc: 'Chat instantly with us' },
+];
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false); 
   const location = useLocation();
 
@@ -32,6 +40,7 @@ export default function Navbar() {
   useEffect(() => {
     setMobileOpen(false);
     setServicesOpen(false);
+    setContactOpen(false);
   }, [location.pathname]);
 
   return (
@@ -42,7 +51,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto flex items-center justify-between h-20 px-6">
 
-   {/* LOGO SECTION - AGGRESSIVE LEFT ALIGNMENT */}
+        {/* LOGO SECTION - AGGRESSIVE LEFT ALIGNMENT */}
         {/* NAVBAR LOGO SECTION - ADJUSTED FOR MOBILE LEFT ALIGNMENT */}
         <Link to="/" className="flex items-center group -ml-24 md:-ml-24 lg:-ml-28"> 
           {/* -ml-12 is the new mobile offset to pull it left. md:-ml-24/lg:-ml-32 keeps your desktop look */}
@@ -108,6 +117,38 @@ export default function Navbar() {
           }`}>
             Student Portal
           </Link>
+
+          <div 
+            className="relative h-full flex items-center" 
+            onMouseEnter={() => setContactOpen(true)} 
+            onMouseLeave={() => setContactOpen(false)}
+          >
+            <button className={`font-body text-sm font-medium uppercase tracking-label flex items-center gap-1 transition-colors duration-300 ${
+              showActiveNavbar ? 'text-primary hover:text-gold' : 'text-background hover:text-gold'
+            }`}>
+              Contact Us <ChevronDown size={14} className={`transition-transform duration-300 ${contactOpen ? 'rotate-180' : ''}`} />
+            </button>
+            
+            {contactOpen && (
+              <div className="absolute top-full left-0 pt-2">
+                <div className="absolute -top-2 left-0 w-full h-2 bg-transparent" />
+                <div className="w-72 bg-background border border-primary/10 shadow-xl animate-fade-up rounded-b-xl overflow-hidden">
+                  {contactOptions.map((option) => (
+                    <a
+                      key={option.label}
+                      href={option.href}
+                      target={option.label === 'WhatsApp' ? '_blank' : '_self'}
+                      rel="noopener noreferrer"
+                      className="block px-6 py-4 hover:bg-surface transition-colors duration-200 border-b border-primary/5 last:border-0"
+                    >
+                      <span className="font-body text-sm font-bold text-primary block">{option.label}</span>
+                      <span className="block font-body text-[11px] text-muted-foreground mt-1 leading-tight">{option.desc}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Desktop Schedule Button */}
@@ -157,6 +198,21 @@ export default function Navbar() {
             <Link to="/student-portal" className="font-body text-lg font-bold uppercase tracking-label text-primary">
               Student Portal
             </Link>
+
+            <div className="space-y-4">
+              <span className="font-body text-xs font-bold uppercase tracking-label text-gold">Contact Us</span>
+              {contactOptions.map((option) => (
+                <a 
+                  key={option.label} 
+                  href={option.href} 
+                  target={option.label === 'WhatsApp' ? '_blank' : '_self'}
+                  rel="noopener noreferrer"
+                  className="block pl-4 font-body text-sm text-primary"
+                >
+                  {option.label}
+                </a>
+              ))}
+            </div>
 
             <Dialog open={modalOpen} onOpenChange={(val) => {
               setModalOpen(val);
